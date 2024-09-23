@@ -15,7 +15,7 @@ main {
 
 .board-container {
   width: 30%;
-  height: 80%;
+  height: 50%;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
