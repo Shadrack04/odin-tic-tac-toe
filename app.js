@@ -39,13 +39,12 @@ const gameBoard = (() => {
 
     for(let condition of winConditions) {
       const [a, b, c] = condition;
-      console.log(a)
+
       if(board[a].textContent && board[a].textContent == board[b].textContent && board[a].textContent == board[c].textContent) {
         return true;
-      }else {
-        return false;
       }
     }
+    return false;
   }
   checkForWin()
 
@@ -111,3 +110,4 @@ Array.from(cells).forEach((box, index) => {
     gameControl.playTurn(index);
   })
 })
+
