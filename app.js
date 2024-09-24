@@ -80,8 +80,12 @@ const gameControl = (function() {
 
       if(gameBoard.checkForWin()) {
         console.log(`${currentPlayer.name} Wins`);
+        gameBoard.resetBoard();
+        switchTurn();
       }else if(gameBoard.isBoardFull()) {
-        return `it's a draw`;
+        console.log(`it's a draw`);
+        gameBoard.resetBoard();
+        switchTurn();
       }else {
         switchTurn();
       }
