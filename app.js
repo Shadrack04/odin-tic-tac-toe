@@ -1,4 +1,7 @@
 const cells = document.querySelectorAll('.board');
+const startBtn = document.querySelector('.startBtn');
+const player1Name = document.getElementById('p1-name').value;
+const player2Name = document.getElementById('p2-name').value;
 
 function createPlayer(name, marker) {
   return {
@@ -108,7 +111,10 @@ const gameControl = (function() {
   }
 })();
 
-gameControl.startGame('james', 'o', 'shady', 'x');
+startBtn.addEventListener('click', ()=>{
+  gameControl.startGame(player1Name, 'o', player2Name, 'x');
+})
+
 Array.from(cells).forEach((box, index) => {
   box.addEventListener('click', () => {    
     gameControl.playTurn(index);
